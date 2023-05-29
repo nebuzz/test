@@ -4,7 +4,7 @@
 class Dome():
 
     def domes(self):
-        print('Hello World!')
+        print('Hello 熊登辉!')
 
 
 if __name__ == "__main__":
