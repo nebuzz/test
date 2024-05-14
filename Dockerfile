@@ -1,8 +1,8 @@
-# 第一阶段:完整的构建环境
-FROM python:latest
+# Use the Nginx image from Docker Hub as the base image
+FROM nginx:latest
 
-# 第二阶段:将代码放到指定的目录
-WORKDIR /dome
-ADD . /dome
-# 第三阶段:执行脚本
-CMD ["python", "/dome/dome.py"]  
+# Copy the index.html file into the container
+COPY index.html /usr/share/nginx/html/index.html
+
+# Start Nginx when the container has provisioned.
+CMD ["nginx", "-g", "daemon off;"]
